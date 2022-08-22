@@ -22,7 +22,7 @@ public class DiseaseModel {
         connection = instance.getConnection();
     }
 
-    public List<Disease> getById(long virusId){
+    public List<Disease> getDiseasesByVirusId(long virusId){
 
         List<Disease> diseaseList = new ArrayList<>();
 
@@ -47,6 +47,13 @@ public class DiseaseModel {
         } catch (SQLException e) {
             log.error(e.getMessage());
             throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         return null;

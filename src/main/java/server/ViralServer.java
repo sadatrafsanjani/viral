@@ -3,8 +3,8 @@ package server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import lombok.extern.slf4j.Slf4j;
+import service.DiseaseServiceImpl;
 import service.VirusServiceImpl;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +19,7 @@ public class ViralServer {
             server = ServerBuilder
                     .forPort(5000)
                     .addService(new VirusServiceImpl())
+                    .addService(new DiseaseServiceImpl())
                     .build()
                     .start();
         } catch (IOException e) {
