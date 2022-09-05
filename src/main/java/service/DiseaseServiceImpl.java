@@ -7,28 +7,25 @@ import com.rafsan.disease.DiseaseServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.slf4j.Slf4j;
 import model.DiseaseModel;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class DiseaseServiceImpl extends DiseaseServiceGrpc.DiseaseServiceImplBase {
 
     private DiseaseModel diseaseModel = new DiseaseModel();
 
-    public void getDiseases(DiseaseRequest request, StreamObserver<DiseaseResponse> responseObserver){
+    public void getDiseasesForVirus(DiseaseRequest request, StreamObserver<DiseaseResponse> responseObserver){
 
-        List<Disease> diseaseList = new ArrayList<>();
-
-        diseaseModel.getDiseasesByVirusId(request.getId()).forEach(disease -> {
-            diseaseList.add(
-                    Disease.newBuilder()
-                            .setId(disease.getId())
-                            .setName(disease.getName())
-                            .setVirusId(disease.getVirus().getId())
-                            .setFatality(disease.getFatality())
-                            .build()
-            );
-        });
+        List<Disease> diseaseList = diseaseModel.getDiseasesByVirusId(request.getId()).stream().map(
+                disease ->
+                        Disease.newBuilder()
+                                .setId(disease.getId())
+                                .setName(disease.getName())
+                                .setVirusId(disease.getVirus().getId())
+                                .setFatality(disease.getFatality())
+                                .build())
+                .collect(Collectors.toList());
 
         DiseaseResponse response = DiseaseResponse.newBuilder()
                 .addAllDisease(diseaseList)

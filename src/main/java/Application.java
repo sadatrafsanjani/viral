@@ -1,3 +1,4 @@
+import server.DiseaseServer;
 import server.ViralServer;
 
 public class Application {
@@ -7,6 +8,9 @@ public class Application {
         ViralServer viralServer = new ViralServer();
         viralServer.start();
         viralServer.blockUntilShutdown();
-        System.out.println("Started...");
+
+        DiseaseServer diseaseServer = new DiseaseServer();
+        diseaseServer.start();
+        diseaseServer.blockUntilShutdown();
     }
 }

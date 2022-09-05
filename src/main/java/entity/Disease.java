@@ -9,7 +9,6 @@ import lombok.*;
 @Builder
 public class Disease {
 
-
     private int id;
     private Virus virus;
     private String name;

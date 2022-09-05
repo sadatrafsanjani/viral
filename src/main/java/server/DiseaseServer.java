@@ -3,12 +3,12 @@ package server;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import lombok.extern.slf4j.Slf4j;
-import service.VirusServiceImpl;
+import service.DiseaseServiceImpl;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class ViralServer {
+public class DiseaseServer {
 
     private Server server;
 
@@ -16,8 +16,8 @@ public class ViralServer {
 
         try {
             server = ServerBuilder
-                    .forPort(5000)
-                    .addService(new VirusServiceImpl())
+                    .forPort(5001)
+                    .addService(new DiseaseServiceImpl())
                     .build()
                     .start();
         } catch (IOException e) {
@@ -25,7 +25,7 @@ public class ViralServer {
             throw new RuntimeException(e);
         }
 
-        Runtime.getRuntime().addShutdownHook(new Thread(ViralServer.this::stop));
+        Runtime.getRuntime().addShutdownHook(new Thread(DiseaseServer.this::stop));
     }
 
     public void stop(){
