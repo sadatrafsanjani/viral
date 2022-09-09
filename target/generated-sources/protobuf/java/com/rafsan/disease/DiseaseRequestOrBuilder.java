@@ -8,8 +8,8 @@ public interface DiseaseRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 id = 1;</code>
-   * @return The id.
+   * <code>int32 virus_id = 1;</code>
+   * @return The virusId.
    */
-  int getId();
+  int getVirusId();
 }

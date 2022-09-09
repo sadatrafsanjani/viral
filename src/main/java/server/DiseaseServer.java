@@ -16,10 +16,11 @@ public class DiseaseServer {
 
         try {
             server = ServerBuilder
-                    .forPort(5001)
+                    .forPort(50052)
                     .addService(new DiseaseServiceImpl())
                     .build()
                     .start();
+            log.info("Disease Server Started...");
         } catch (IOException e) {
             log.error(e.getMessage());
             throw new RuntimeException(e);
@@ -50,5 +51,12 @@ public class DiseaseServer {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public static void main(String[] args){
+
+        DiseaseServer diseaseServer = new DiseaseServer();
+        diseaseServer.start();
+        diseaseServer.blockUntilShutdown();
     }
 }

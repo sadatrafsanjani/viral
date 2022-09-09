@@ -1,8 +1,10 @@
 com\rafsan\disease\DiseaseRequestOrBuilder.class
+dao\VirusDao.class
 com\rafsan\disease\DiseaseRequest$Builder.class
 com\rafsan\disease\DiseaseOrBuilder.class
 com\rafsan\disease\DiseaseServiceGrpc$DiseaseServiceFutureStub.class
 com\rafsan\disease\DiseaseServiceGrpc$DiseaseServiceBlockingStub.class
+dao\DiseaseDao.class
 com\rafsan\disease\Disease$1.class
 com\rafsan\virus\Virus.class
 service\DiseaseServiceImpl.class
@@ -13,14 +15,11 @@ com\rafsan\disease\DiseaseResponse$Builder.class
 com\rafsan\virus\VirusServiceGrpc$VirusServiceBaseDescriptorSupplier.class
 com\rafsan\virus\VirusServiceGrpc$3.class
 com\rafsan\disease\DiseaseResponse.class
-Application.class
-model\VirusModel.class
 com\rafsan\disease\DiseaseResponse$1.class
 com\rafsan\virus\VirusServiceGrpc$VirusServiceStub.class
 com\rafsan\disease\DiseaseServiceGrpc.class
 com\rafsan\disease\DiseaseServiceGrpc$1.class
 com\rafsan\virus\VirusRequest$Builder.class
-model\DiseaseModel.class
 com\rafsan\virus\VirusServiceGrpc$2.class
 com\rafsan\virus\VirusRequest.class
 server\DiseaseServer.class
@@ -32,6 +31,7 @@ com\rafsan\virus\VirusServiceGrpc$VirusServiceImplBase.class
 entity\Virus$VirusBuilder.class
 com\rafsan\virus\VirusResponseOrBuilder.class
 server\ViralServer.class
+client\DiseaseClient.class
 com\rafsan\disease\DiseaseRequest$1.class
 com\rafsan\virus\VirusServiceGrpc$VirusServiceFileDescriptorSupplier.class
 com\rafsan\disease\Disease$Builder.class

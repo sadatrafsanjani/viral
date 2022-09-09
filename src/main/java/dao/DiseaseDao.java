@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import database.DBConnection;
 import entity.Disease;
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class DiseaseModel {
+public class DiseaseDao {
 
     private final DBConnection instance = DBConnection.getInstance();
     private Connection connection;
-    private VirusModel virusModel = new VirusModel();
+    private VirusDao virusDao = new VirusDao();
 
-    public DiseaseModel(){
+    public DiseaseDao(){
 
         connection = instance.getConnection();
     }
@@ -37,7 +37,7 @@ public class DiseaseModel {
                 diseaseList.add(
                         Disease.builder()
                                 .id(result.getInt("id"))
-                                .virus(virusModel.getById(result.getInt("virus_id")))
+                                .virus(virusDao.getById(result.getInt("virus_id")))
                                 .name(result.getString("name"))
                                 .fatality(result.getString("fatality"))
                                 .build()

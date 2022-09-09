@@ -10,7 +10,7 @@ service DiseaseService {
 }
 
 message DiseaseRequest {
-    int32 id = 1;
+    int32 virus_id = 1;
 }
 
 message DiseaseResponse {
@@ -18,8 +18,8 @@ message DiseaseResponse {
 }
 
 message Disease {
-    int32 virus_id = 1;
-    int32 id = 2;
+    int32 id = 1;
+    int32 virus_id = 2;
     string name = 3;
     string fatality = 4;
 }

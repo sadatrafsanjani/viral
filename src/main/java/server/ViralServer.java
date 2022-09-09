@@ -16,10 +16,11 @@ public class ViralServer {
 
         try {
             server = ServerBuilder
-                    .forPort(5000)
+                    .forPort(50051)
                     .addService(new VirusServiceImpl())
                     .build()
                     .start();
+            log.info("Virus Server Started...");
         } catch (IOException e) {
             log.error(e.getMessage());
             throw new RuntimeException(e);
@@ -50,5 +51,12 @@ public class ViralServer {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public static void main(String[] args){
+
+        ViralServer viralServer = new ViralServer();
+        viralServer.start();
+        viralServer.blockUntilShutdown();
     }
 }

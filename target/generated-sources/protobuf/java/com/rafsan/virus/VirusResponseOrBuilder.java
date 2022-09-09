@@ -24,4 +24,10 @@ public interface VirusResponseOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>int32 no_of_diseases = 3;</code>
+   * @return The noOfDiseases.
+   */
+  int getNoOfDiseases();
 }

@@ -50,7 +50,7 @@ private static final long serialVersionUID = 0L;
             break;
           case 8: {
 
-            id_ = input.readInt32();
+            virusId_ = input.readInt32();
             break;
           }
           default: {
@@ -85,15 +85,15 @@ private static final long serialVersionUID = 0L;
             com.rafsan.disease.DiseaseRequest.class, com.rafsan.disease.DiseaseRequest.Builder.class);
   }
 
-  public static final int ID_FIELD_NUMBER = 1;
-  private int id_;
+  public static final int VIRUS_ID_FIELD_NUMBER = 1;
+  private int virusId_;
   /**
-   * <code>int32 id = 1;</code>
-   * @return The id.
+   * <code>int32 virus_id = 1;</code>
+   * @return The virusId.
    */
   @java.lang.Override
-  public int getId() {
-    return id_;
+  public int getVirusId() {
+    return virusId_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -110,8 +110,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (id_ != 0) {
-      output.writeInt32(1, id_);
+    if (virusId_ != 0) {
+      output.writeInt32(1, virusId_);
     }
     unknownFields.writeTo(output);
   }
@@ -122,9 +122,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (id_ != 0) {
+    if (virusId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, id_);
+        .computeInt32Size(1, virusId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     }
     com.rafsan.disease.DiseaseRequest other = (com.rafsan.disease.DiseaseRequest) obj;
 
-    if (getId()
-        != other.getId()) return false;
+    if (getVirusId()
+        != other.getVirusId()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -154,8 +154,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId();
+    hash = (37 * hash) + VIRUS_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVirusId();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -289,7 +289,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      id_ = 0;
+      virusId_ = 0;
 
       return this;
     }
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.rafsan.disease.DiseaseRequest buildPartial() {
       com.rafsan.disease.DiseaseRequest result = new com.rafsan.disease.DiseaseRequest(this);
-      result.id_ = id_;
+      result.virusId_ = virusId_;
       onBuilt();
       return result;
     }
@@ -366,8 +366,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.rafsan.disease.DiseaseRequest other) {
       if (other == com.rafsan.disease.DiseaseRequest.getDefaultInstance()) return this;
-      if (other.getId() != 0) {
-        setId(other.getId());
+      if (other.getVirusId() != 0) {
+        setVirusId(other.getVirusId());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -398,33 +398,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int id_ ;
+    private int virusId_ ;
     /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
+     * <code>int32 virus_id = 1;</code>
+     * @return The virusId.
      */
     @java.lang.Override
-    public int getId() {
-      return id_;
+    public int getVirusId() {
+      return virusId_;
     }
     /**
-     * <code>int32 id = 1;</code>
-     * @param value The id to set.
+     * <code>int32 virus_id = 1;</code>
+     * @param value The virusId to set.
      * @return This builder for chaining.
      */
-    public Builder setId(int value) {
+    public Builder setVirusId(int value) {
       
-      id_ = value;
+      virusId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 id = 1;</code>
+     * <code>int32 virus_id = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearId() {
+    public Builder clearVirusId() {
       
-      id_ = 0;
+      virusId_ = 0;
       onChanged();
       return this;
     }

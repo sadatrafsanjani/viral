@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import database.DBConnection;
 import entity.Virus;
@@ -6,12 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import java.sql.*;
 
 @Slf4j
-public class VirusModel {
+public class VirusDao {
 
     private final DBConnection instance = DBConnection.getInstance();
     private Connection connection;
 
-    public VirusModel(){
+    public VirusDao(){
 
         connection = instance.getConnection();
     }
